@@ -7,6 +7,9 @@
  *
  * Contributors:
  *    Tran Nam Quang - initial API and implementation
+ *
+ *    Elliott Ploutz - augmenter: any edits will have code snippets opened by 
+ *						// ECP ***** and closed by // ***** ECP
  *******************************************************************************/
 
 package net.sourceforge.docfetcher.build;
@@ -97,11 +100,11 @@ public final class BuildMain {
 
 		recreateJarFile("", false, LineSep.WINDOWS); // Needed for NSIS script
 		File portableJar = recreateJarFile("portable_", true, LineSep.WINDOWS);
-		File macOsXJar = recreateJarFile("macosx_", false, LineSep.UNIX);
+		//File macOsXJar = recreateJarFile("macosx_", false, LineSep.UNIX); // Not needed for our purposes - ECP
 
 		rebuildManuals();
 		createPortableBuild(portableJar);
-		createMacOsXBuild(macOsXJar);
+		//createMacOsXBuild(macOsXJar); // Not needed for our purposes - ECP
 		runTests();
 	}
 
@@ -184,7 +187,7 @@ public final class BuildMain {
 		);
 
 		// Create DocFetcher.app launcher for Mac OS X
-		String macOsXLauncher = U.format("%s/%s.app/Contents/MacOS/%s", releaseDir, appName, appName);
+		/* ECP ***** String macOsXLauncher = U.format("%s/%s.app/Contents/MacOS/%s", releaseDir, appName, appName);
 		U.copyTextFile(
 			"dist/launchers/launcher-macosx-portable.sh",
 			macOsXLauncher,
@@ -199,10 +202,10 @@ public final class BuildMain {
 
 		makeExecutable(
 			"Cannot make the portable launcher shell scripts executable.",
-			linuxLauncher, macOsXLauncher);
+			linuxLauncher, macOsXLauncher); ***** ECP */
 
 		String exeLauncher = U.format("%s/%s.exe", releaseDir, appName);
-		U.copyBinaryFile("dist/launchers/DocFetcher-512.exe", exeLauncher);
+		U.copyBinaryFile("dist/launchers/DocFetcher-512.exe", exeLauncher); // Note - this copies the executable provided with the software
 
 		for (int heapSize : new int[] {256, 512, 768, 1024}) {
 			String exeName = U.format("%s-%d.exe", appName, heapSize);

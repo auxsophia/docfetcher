@@ -20,7 +20,7 @@
 
 /**
  * RaiiLocker
- * Pattern : Ressource Acquisition Is Initialization
+ * Pattern : Resource Acquisition Is Initialization
  * locks and unlocks the given lock
  * Stores a REFERENCE to the lock
  *
