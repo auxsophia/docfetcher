@@ -27,6 +27,7 @@
 
 # Where the indexes are stored:
 #indexes=C:\\path\\to\\indexes\\folder
+indexes=X:\\Groups\\FM\\IT\\DocFetcher Index
 
 # Where the SWT library files will be written to:
 #swt=C:\\path\\to\\swt-libs

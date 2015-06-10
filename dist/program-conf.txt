@@ -13,7 +13,7 @@ AppName = DocFetcher
 
 # Whether to show a link to this file on the preferences dialog. Disable this
 # setting to prevent users from mucking around in this file.
-ShowAdvancedSettingsLink = true
+ShowAdvancedSettingsLink = false
 
 # If this is true, the program will not store changes made by the user to the
 # sizes of the various program windows. Instead, it will always reload the last
@@ -53,7 +53,7 @@ InitialSorting = 0
 # Desktop interface: The maximum number of search results to return for each
 # query. If you set a value that is too high, DocFetcher may crash with an
 # OutOfMemoryError while searching.
-MaxResultsTotal = 10000
+MaxResultsTotal = 50
 
 # Web interface: The maximum number of search results to display on a single
 # page. (Note: The web interface is not available yet.)
@@ -93,14 +93,14 @@ UnpackCacheCapacity = 20
 Analyzer = 0
 
 # Whether the user is allowed to create, update, rebuild and remove indexes,
-# respectively. Disabling any of these setings will hide the respective context
+# respectively. Disabling any of these settings will hide the respective context
 # menu entries in the Search Scope pane.
-AllowIndexCreation = true
-AllowIndexUpdate = true
-AllowIndexRebuild = true
-AllowIndexDeletion = true
+AllowIndexCreation = false
+AllowIndexUpdate = false
+AllowIndexRebuild = false
+AllowIndexDeletion = false
 
 # By default, when DocFetcher starts up it checks the index folder for any
 # obsolete index files, and if it finds any, it asks the user whether the files
 # should be deleted. You can turn this off with this setting.
-ReportObsoleteIndexFiles = true
+ReportObsoleteIndexFiles = false
